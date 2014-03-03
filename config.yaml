@@ -49,7 +49,3 @@ hosts:
     address: 192.168.134.56
     name: os-ci-test12
     role: openstack-full
-  -
-    address: 192.168.134.57
-    name: os-ci-test13
-    role: openstack-full

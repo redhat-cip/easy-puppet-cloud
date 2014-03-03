@@ -45,7 +45,7 @@ ssh os-ci-test7.lab ifconfig eth2:1 192.168.44.253
 for i in 192.168.134.49 `cat config.yaml|awk '/^ +address: / {print $2}'`; do
     ssh root@$i 'killall -9 `cat /var/run/puppet/agent.pid`'
     ssh root@$i '
-       augtool -s set "/files/etc/puppet/puppet.conf/agent/server" "os-ci-test4.lab.enovance.com"; \
+       augtool -s set "/files/etc/puppet/puppet.conf/agent/server" "os-ci-test4"; \
        augtool -s set "/files/etc/puppet/puppet.conf/agent/pluginsync" "true" '
 
 

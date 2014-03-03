@@ -25,35 +25,31 @@ hosts:
     address: 192.168.134.48
     name: os-ci-test4
     role: puppet-master
-#  -
-#    address: 192.168.134.49
-#    name: os-ci-test5
-#    role: openstack-full
-#  -
-#    address: 192.168.134.51
-#    name: os-ci-test7
-#    role: openstack-full
-#  -
-#    address: 192.168.134.52
-#    name: os-ci-test8
-#    role: openstack-full
-#  -
-#    address: 192.168.134.53
-#    name: os-ci-test9
-#    role: openstack-full
-#  -
-#    address: 192.168.134.54
-#    name: os-ci-test10
-#    role: openstack-full
-#  -
-#    address: 192.168.134.55
-#    name: os-ci-test11
-#    role: openstack-full
-#  -
-#    address: 192.168.134.56
-#    name: os-ci-test12
-#    role: openstack-full
-#  -
-#    address: 192.168.134.57
-#    name: os-ci-test13
-#    role: openstack-full
+  -
+    address: 192.168.134.49
+    name: os-ci-test7
+    role: openstack-full
+  -
+    address: 192.168.134.52
+    name: os-ci-test8
+    role: openstack-full
+  -
+    address: 192.168.134.53
+    name: os-ci-test9
+    role: openstack-full
+  -
+    address: 192.168.134.54
+    name: os-ci-test10
+    role: openstack-full
+  -
+    address: 192.168.134.55
+    name: os-ci-test11
+    role: openstack-full
+  -
+    address: 192.168.134.56
+    name: os-ci-test12
+    role: openstack-full
+  -
+    address: 192.168.134.57
+    name: os-ci-test13
+    role: openstack-full

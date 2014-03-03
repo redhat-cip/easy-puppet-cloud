@@ -34,7 +34,7 @@ else
     echo "grant all privileges on puppet.* to puppet@localhost identified by 'password';" | ssh root@${PUPPETMASTER} mysql -uroot
 
     ssh root@${PUPPETMASTER} " \
-        echo "*" > /etc/puppet/autosign.conf ; \
+        echo * > /etc/puppet/autosign.conf ; \
         augtool -s set '/files/etc/puppet/puppet.conf/master/storeconfigs' 'true' ; \
         augtool -s set '/files/etc/puppet/puppet.conf/master/dbadapter' 'mysql' ; \
         augtool -s set '/files/etc/puppet/puppet.conf/master/dbuser' 'puppet' ; \

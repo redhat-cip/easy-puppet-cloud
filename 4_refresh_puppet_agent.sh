@@ -35,6 +35,13 @@ agent_pid_list=""
 #ssh root@192.168.134.49 ifconfig eth0:1 192.168.134.253
 #ssh root@os-ci-test4.lab "killall puppet; puppet master" > $LOGDIR/puppetmaster.log 2>&1 &
 echo "begin $(date)<br />" > $LOGDIR/HEADER.html
+
+
+# TODO(Gonéri)
+ssh os-ci-test7.lab ifconfig eth0:1 192.168.121.253
+ssh os-ci-test7.lab ifconfig eth1:1 192.168.134.253
+ssh os-ci-test7.lab ifconfig eth2:1 192.168.44.253
+
 for i in 192.168.134.49 `cat config.yaml|awk '/^ +address: / {print $2}'`; do
     ssh root@$i 'killall -9 `cat /var/run/puppet/agent.pid`'
     ssh root@$i '

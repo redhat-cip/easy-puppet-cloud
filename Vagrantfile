@@ -82,7 +82,7 @@ Vagrant.configure("2") do |config|
       :libvirt__network_name => 'public',
       :libvirt__netmask => '255.255.255.0',
       :libvirt__forward_mode => 'nat',
-      :ip => '192.168.44.50'
+      :ip => '192.168.44.49'
   end
 
   config.vm.define 'os-ci-test8' do |node|

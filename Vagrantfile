@@ -149,21 +149,21 @@ Vagrant.configure("2") do |config|
       :ip => '192.168.44.55'
   end
 
-  config.vm.define 'os-ci-test12' do |node|
-    node.vm.hostname = 'os-ci-test12'
-    node.vm.host_name = 'os-ci-test12'
-    node.vm.box = "openstack-full"
-    node.vm.network :private_network,
-      :libvirt__network_name => 'mgmt_internal',
-      :libvirt__netmask => '255.255.255.0',
-      :libvirt__forward_mode => 'nat',
-      :ip => '192.168.134.56'
-    node.vm.network :private_network,
-      :libvirt__network_name => 'public',
-      :libvirt__netmask => '255.255.255.0',
-      :libvirt__forward_mode => 'nat',
-      :ip => '192.168.44.56'
-  end
+  #config.vm.define 'os-ci-test12' do |node|
+  #  node.vm.hostname = 'os-ci-test12'
+  #  node.vm.host_name = 'os-ci-test12'
+  #  node.vm.box = "openstack-full"
+  #  node.vm.network :private_network,
+  #    :libvirt__network_name => 'mgmt_internal',
+  #    :libvirt__netmask => '255.255.255.0',
+  #    :libvirt__forward_mode => 'nat',
+  #    :ip => '192.168.134.56'
+  #  node.vm.network :private_network,
+  #    :libvirt__network_name => 'public',
+  #    :libvirt__netmask => '255.255.255.0',
+  #    :libvirt__forward_mode => 'nat',
+  #    :ip => '192.168.44.56'
+  #end
 
   config.vm.provider :libvirt do |domain|
     domain.memory = 512

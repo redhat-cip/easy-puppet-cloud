@@ -9,7 +9,7 @@ for num in $(seq 1 12); do
   name="os-ci-test${num}"
   grep -q -E "$name$" config.yaml
   if [ $? -eq 0 ]; then
-    data=$(grep -B 1 -A 1 -E "${name}$" config.yaml)
+    data=$(grep -B 1 -E "${name}$" config.yaml)
     address=$(echo $data | grep address | awk '{print $2}')
     cat >> $SSH_CONFIG_FILE << EOF
 Host $name

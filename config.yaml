@@ -6,8 +6,8 @@ general:
     ssh_key: /home/goneri/.ssh/id_rsa.pub
     #ssh_key: /home/sbadia/.ssh/id_rsa_seb.pub
 edeploy:
-    #dir: /var/lib/debootstrap/install/D7-H.1.0.0
-    dir: /var/lib/debootstrap/install/RH6.5-H.1.0.0
+    dir: /var/lib/debootstrap/install/D7-H.1.0.0
+    #dir: /var/lib/debootstrap/install/RH6.5-H.1.0.0
 hosts:
   -
     address: 192.168.134.45
@@ -44,8 +44,4 @@ hosts:
   -
     address: 192.168.134.55
     name: os-ci-test11
-    role: openstack-full
-  -
-    address: 192.168.134.56
-    name: os-ci-test12
     role: openstack-full

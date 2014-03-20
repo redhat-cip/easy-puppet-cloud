@@ -13,7 +13,7 @@ if [ ! -f $SSH_CONFIG_FILE ]; then
   bash tools/create_ssh_config.sh
 fi
 
-hosts=$(cat config.yaml|awk '/^ +name: / {print $2}')
+hosts=$(cat config.yaml | egrep -v '^[[:space:]]*#.*' | awk '/^ +name: / {print $2}')
 
 for host in $hosts; do
     ssh $SSH_OPTIONS $host '

@@ -10,7 +10,7 @@ if [ ! -d $LOGDIR ]; then
   mkdir -p $LOGDIR
 fi
 
-hosts=$(cat config.yaml|awk '/^ +name: / {print $2}')
+hosts=$(cat config.yaml | egrep -v '^[[:space:]]*#.*' | awk '/^ +name: / {print $2}')
 
 while ! rsync -e "ssh $SSH_OPTIONS " -av --delete --exclude '*.sw?' --exclude '*~' manifests modules root@${PUPPETMASTER}:/etc/puppet; do
     sleep 1;
@@ -67,5 +67,5 @@ for host in $hosts; do
     if [ -s "/tmp/foo.log" ]; then
         cat /tmp/foo.log | ansi2html -p | sed -r 's,background: black;,,i' > $LOGDIR/${host}.error.html
     fi
-    cat $LOGDIR/${i}.log | ansi2html -p | sed -r 's,background: black;,,i' > $LOGDIR/${host}.html
+    cat $LOGDIR/${host}.log | ansi2html -p | sed -r 's,background: black;,,i' > $LOGDIR/${host}.html
 done
